@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background-color: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 7px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: none;
+            margin-top: 3px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+        <h2>Registration Form</h2>
+        <form id="regForm">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <div class="error" id="nameErr">Please enter your name</div>
+
+            <label>Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <div class="error" id="emailErr">Enter a valid email</div>
+
+            <label>Password:</label>
+            <input type="password" id="pass" placeholder="Enter password">
+            <div class="error" id="passErr">At least 6 characters</div>
+
+            <button type="submit">Register</button>
+            <div class="success" id="successMsg">Registered Successfully!</div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("regForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let pass = document.getElementById("pass").value.trim();
+
+            let valid = true;
+
+            // reset all messages
+            document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+            document.getElementById("successMsg").style.display = "none";
+
+            if (name === "") {
+                document.getElementById("nameErr").style.display = "block";
+                valid = false;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                document.getElementById("emailErr").style.display = "block";
+                valid = false;
+            }
+
+            if (pass.length < 6) {
+                document.getElementById("passErr").style.display = "block";
+                valid = false;
+            }
+
+            if (valid) {
+                document.getElementById("successMsg").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

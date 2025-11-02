@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Car Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #2a3f54;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            background-color: #3b6978;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #f1c40f;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            color: #2a3f54;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e67e22;
+            display: inline-block;
+        }
+
+        .car-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .car {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .car:hover {
+            transform: translateY(-5px);
+        }
+
+        .car img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .car h3 {
+            font-size: 1.2em;
+            color: #2a3f54;
+            margin: 10px 0;
+        }
+
+        .car p {
+            color: #666;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .car button {
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: background-color 0.3s;
+        }
+
+        .car button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Online Car Store</h1>
+    </div>
+
+    <div class="nav">
+        <a href="#home">Home</a>
+        <a href="#cars">Cars</a>
+    </div>
+
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Our Collection</h2>
+            <p>Explore our premium collection of cars with top performance and design.</p>
+        </section>
+
+        <section id="cars" class="section">
+            <h2>Featured Cars</h2>
+            <div class="car-list">
+
+                <div class="car">
+                    <img src="1.jpg" alt="Car 1">
+                    <h3>Lamborghini Aventador</h3>
+                    <p>Engine: 6.5L V12 | Top Speed: 350 km/h</p>
+                    <p>Price: ₹6.25 Cr</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="car">
+                    <img src="2.jpg" alt="Car 2">
+                    <h3>Ferrari 488 GTB</h3>
+                    <p>Engine: 3.9L V8 | Top Speed: 330 km/h</p>
+                    <p>Price: ₹4.40 Cr</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="car">
+                    <img src="3.jpg" alt="Car 3">
+                    <h3>Porsche 911 Turbo S</h3>
+                    <p>Engine: 3.8L Twin Turbo | Top Speed: 320 km/h</p>
+                    <p>Price: ₹3.10 Cr</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="car">
+                    <img src="4.jpg" alt="Car 4">
+                    <h3>McLaren 720S</h3>
+                    <p>Engine: 4.0L Twin Turbo V8 | Top Speed: 341 km/h</p>
+                    <p>Price: ₹4.65 Cr</p>
+                    <button>Add to Cart</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
